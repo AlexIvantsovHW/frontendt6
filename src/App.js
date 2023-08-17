@@ -9,9 +9,9 @@ function App() {
   debugger;
   const fetchData= async ()=>{
     try{
-      debugger;
-       const result=await axios("https://t6-cuzc.onrender.com/users") 
-      /* const result=await axios("http://localhost:3001/users") */
+      debugger; 
+       const result=await axios("https://t6-cuzc.onrender.com/users")  
+       /* const result=await axios("http://localhost:3001/users")  */
       debugger;
       setMessage(result);
       console.log(result);
