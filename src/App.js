@@ -10,7 +10,7 @@ function App() {
   const fetchData= async ()=>{
     try{
       debugger;
-      const result=await axios("https://t6-cuzc.onrender.com/users")
+       const result=await axios("https://t6-cuzc.onrender.com/users") 
       /* const result=await axios("http://localhost:3001/users") */
       debugger;
       setMessage(result);
@@ -21,7 +21,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         {
-          !message?"Loading":(message.data[0].name)
+          !message?"Loading":(message.data[10].name)
         }
       </header>
     </div>
