@@ -1,22 +1,28 @@
-import logo from './logo.svg';
+import axios from 'axios'
 import './App.css';
+import { React, useEffect, useState } from 'react';
+
 
 function App() {
+  const [message,setMessage]=useState(null)
+  useEffect(()=>{fetchData();},[])
+  debugger;
+  const fetchData= async ()=>{
+    try{
+      debugger;
+      /* const result=await axios("https://t6-cuzc.onrender.com/user") */
+      const result=await axios("http://localhost:3001/users")
+      debugger;
+      setMessage(result);
+      console.log(result);
+    }catch(err){console.log('Error')}
+  }
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {
+          !message?"Loading":(message.data[0].name)
+        }
       </header>
     </div>
   );
