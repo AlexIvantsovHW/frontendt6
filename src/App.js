@@ -1,29 +1,13 @@
-import axios from 'axios'
-import './App.css';
-import { React, useEffect, useState } from 'react';
-
+import TagContainer from "./Component/Tag/TagContainer";
+import WindowContainer from "./Component/Window/WindowContainer";
 
 function App() {
-  const [message,setMessage]=useState(null)
-  useEffect(()=>{fetchData();},[])
-  debugger;
-  const fetchData= async ()=>{
-    try{
-      debugger; 
-       const result=await axios("https://t6-cuzc.onrender.com/users")  
-       /* const result=await axios("http://localhost:3001/users")  */
-      debugger;
-      setMessage(result);
-      console.log(result);
-    }catch(err){console.log('Error')}
-  }
   return (
-    <div className="App">
-      <header className="App-header">
-        {
-          !message?"Loading":(message.data[10].name)
-        }
-      </header>
+    <div className="container-fluid">
+      <div className="row min-vh-100">
+        <TagContainer />
+        <WindowContainer />        
+      </div>
     </div>
   );
 }
