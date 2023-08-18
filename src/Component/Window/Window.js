@@ -12,7 +12,7 @@ function  getField(name,w){return(<Field component="input" name={`${name}`} plac
 const WindowForm = (props) => {
   return (  
       <div>
-      <form onSubmit={props.handleSubmit}>
+      <form onSubmit={props.handleSubmit}  method="post" action="https://t6-cuzc.onrender.com/create">
         <div className="mt-5">
           <div className="d-flex justify-content-center">
           {getField('name','25')}
@@ -31,9 +31,7 @@ const WindowReduxForm = reduxForm({ form: "message" })(WindowForm);
 const Window = (props) => {
   const messageData = props.message.Message;
   const tagFilter =getTags(props.message.Filter);
-  debugger;
   let x=[''].concat(tagFilter);
-  debugger;
   let filterMessages = messageData.filter((o) => x.includes(o.tag));
   const messageList =x.length > 1? filterMessages: messageData;
   function onSubmit(formData) {

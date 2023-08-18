@@ -41,4 +41,4 @@ export function getTags(data){
   for (let i=0;i<data.length;i++){x.push(data[i].value)}
   return Array.from(new Set(x)).filter(Boolean);
 }
-export function tagWord(arr){return arr.split(' ').filter(i=>/^#/.exec(i)).toString();}
+export function tagWord(arr){return(arr.length>0? arr.split(' ').filter(i=>/^#/.exec(i)).toString():null)}
